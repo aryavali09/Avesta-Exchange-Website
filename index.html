@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlTag">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avesta Exchange | صرافی اوستا - Richmond Hill</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Vazirmatn', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#0F172A',
+              navyLight: '#1E293B',
+              gold: '#D97706',
+              goldHover: '#B45309',
+              goldLight: '#FEF3C7',
+              slate: '#334155'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-gold selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-brand-navy text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-3 space-x-reverse">
+        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-gold"></i> <span data-en="FINTRAC Registered MSB" data-fa="ثبت شده در فینترک کانادا (FINTRAC)">FINTRAC Registered MSB</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-gold"></i> Richmond Hill, ON</span>
+      </div>
+      <div class="flex items-center space-x-5 space-x-reverse">
+        <a href="tel:6479200304" class="hover:text-brand-gold transition flex items-center dir-ltr"><i class="fa-solid fa-phone text-brand-gold mr-1.5"></i> (647) 920-0304</a>
+        <a href="https://wa.me/16479200304" target="_blank" class="hover:text-green-400 transition flex items-center"><i class="fa-brands fa-whatsapp text-green-500 text-sm mr-1"></i> WhatsApp</a>
+        <button onclick="toggleLanguage()" class="bg-slate-800 hover:bg-slate-700 text-brand-gold font-bold px-3 py-1 rounded border border-brand-gold/30 text-xs transition flex items-center gap-1">
+          <i class="fa-solid fa-globe"></i> <span id="langBtnText">فارسی</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+      <div class="flex items-center space-x-3 space-x-reverse">
+        <div class="w-11 h-11 bg-brand-navy text-brand-gold font-bold flex items-center justify-center text-2xl rounded-xl shadow border border-brand-gold/30">
+          A
+        </div>
+        <div class="flex flex-col">
+          <span class="text-2xl font-black text-brand-navy tracking-tight">AVESTA <span class="text-brand-gold">EXCHANGE</span></span>
+          <span class="text-[11px] text-slate-500 font-semibold tracking-wide" data-en="Foreign Exchange & Remittance" data-fa="صرافی و خدمات ارزی اوستا">Foreign Exchange & Remittance</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8 space-x-reverse font-semibold text-slate-700 text-sm">
+        <a href="#rates-info" class="hover:text-brand-gold transition" data-en="Rate Policy" data-fa="استعلام نرخ روز">Rate Policy</a>
+        <a href="#services" class="hover:text-brand-gold transition" data-en="Services" data-fa="خدمات ما">Services</a>
+        <a href="#about" class="hover:text-brand-gold transition" data-en="Why Choose Us" data-fa="چرا اوستا">Why Choose Us</a>
+        <a href="#contact" class="hover:text-brand-gold transition" data-en="Contact Us" data-fa="تماس با ما">Contact Us</a>
+      </div>
+
+      <a href="tel:6479200304" class="bg-brand-gold hover:bg-brand-goldHover text-white font-bold px-5 py-2.5 rounded-lg shadow transition flex items-center gap-2 text-sm">
+        <i class="fa-solid fa-phone"></i>
+        <span data-en="Call for Live Rate" data-fa="استعلام تلفنی نرخ">Call for Live Rate</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navyLight text-white py-16 lg:py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-6">
+        <span class="inline-block bg-brand-gold/20 text-brand-gold text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-brand-gold/30" data-en="Richmond Hill Foreign Exchange & Remittance" data-fa="مرکز تخصصی خدمات ارزی و حواله‌جات - ریچموند هیل">
+          Richmond Hill Foreign Exchange & Remittance
+        </span>
+        <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight" data-en="Unmatched Rates, Absolute Speed & Complete Reliability" data-fa="بهترین نرخ روز، بالاترین سرعت و اطمینان کامل در حواله‌جات">
+          Unmatched Rates, Absolute Speed & Complete Reliability
+        </h1>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl" data-en="We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance." data-fa="ارائه رقابتی‌ترین نرخ‌های بازار بدون هیچ‌گونه کارمزد پنهان. جابه‌جایی سریع و امن سرمایه با پشتیبانی کامل و رعایت تمامی استانداردهای قانونی.">
+          We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="tel:6479200304" class="bg-brand-gold hover:bg-brand-goldHover text-white font-bold px-7 py-4 rounded-xl shadow-lg flex items-center gap-3 transition text-base">
+            <i class="fa-solid fa-phone text-lg"></i>
+            <span data-en="Call (647) 920-0304" data-fa="تماس مستقیم: (۶۴۷) ۹۲۰-۰۳۰۴">Call (647) 920-0304</span>
+          </a>
+          <a href="https://wa.me/16479200304" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-4 rounded-xl shadow-lg flex items-center gap-3 transition text-base">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span data-en="Message on WhatsApp" data-fa="ارسال پیام در واتساپ">Message on WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATE NOTICE SECTION -->
+  <section id="rates-info" class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="space-y-3 max-w-3xl">
+          <div class="inline-flex items-center gap-2 bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+            <i class="fa-solid fa-tags"></i>
+            <span data-en="Best Market Rates Guarantee" data-fa="تضمین بهترین نرخ بازار">Best Market Rates Guarantee</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-navy" data-en="Get Your Live Guaranteed Exchange Quote" data-fa="استعلام نرخ لحظه‌ای و قطعی قبل از معامله">
+            Get Your Live Guaranteed Exchange Quote
+          </h2>
+          <p class="text-slate-700 text-sm sm:text-base leading-relaxed" data-en="Foreign exchange markets move fast, and we make sure you get the most competitive real-time rates possible. Because live rates fluctuate minute-by-minute, give us a quick call or message us on WhatsApp to lock in your exact guaranteed rate before completing your transfer." data-fa="بازار ارز لحظه‌ای تغییر می‌کند و ما متعهد هستیم همواره بهترین و به‌روزترین نرخ ممکن را به شما ارائه دهیم. به دلیل نوسانات مداوم، لطفاً پیش از انجام معامله برای استعلام و تثبیت نرخ دقیق خود با ما تماس بگیرید یا در واتس‌اپ پیام دهید.">
+            Foreign exchange markets move fast, and we make sure you get the most competitive real-time rates possible. Because live rates fluctuate minute-by-minute, give us a quick call or message us on WhatsApp to lock in your exact guaranteed rate before completing your transfer.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
+          <a href="tel:6479200304" class="bg-brand-navy hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone text-brand-gold"></i>
+            <span data-en="Call Trading Desk" data-fa="تماس برای نرخ روز">Call Trading Desk</span>
+          </a>
+          <a href="https://wa.me/16479200304" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-en="WhatsApp Inquiry" data-fa="استعلام سریع در واتس‌اپ">WhatsApp Inquiry</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy" data-en="Our Core Services" data-fa="خدمات اصلی صرافی اوستا">Our Core Services</h2>
+        <p class="text-slate-600 mt-3 text-base" data-en="Fast, transparent, and completely dependable currency exchange solutions tailored for you." data-fa="ارائه خدمات ارزی و انتقال پول با بالاترین سرعت، شفافیت کامل و قیمت‌های رقابتی.">
+          Fast, transparent, and completely dependable currency exchange solutions tailored for you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Service 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-amber-100 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Competitive FX Rates" data-fa="بهترین نرخ‌های مبادله">Competitive FX Rates</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-en="Enjoy top-tier exchange margins on CAD, USD, EUR, and Toman with zero hidden processing charges." data-fa="تبدیل دلار کانادا، آمریکا، یورو و تومان با برترین نرخ‌های بازار و بدون کارمزد پنهان.">
+            Enjoy top-tier exchange margins on CAD, USD, EUR, and Toman with zero hidden processing charges.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Fast Remittances" data-fa="حواله‌جات ارزی سریع">Fast Remittances</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-en="Swift global bank deposits and individual fund transfers executed with total precision." data-fa="انتقال سریع و مستقیم پول برای امور شخصی، خانوادگی و تجاری در کوتاه‌ترین زمان.">
+            Swift global bank deposits and individual fund transfers executed with total precision.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Commercial Transfers" data-fa="حواله‌های تجاری و بزرگ">Commercial Transfers</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-en="Dedicated high-volume transfer services for personal investments, property purchases, and business operations." data-fa="خدمات ویژه برای حواله‌های بزرگ، امور ملکی، خریدهای تجاری و سرمایه‌گذاری با نرخ اختصاصی.">
+            Dedicated high-volume transfer services for personal investments, property purchases, and business operations.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="FINTRAC Registered" data-fa="امنیت و مجوز رسمی">FINTRAC Registered</h3>
+          <p class="text-slate-600 text-sm leading-relaxed" data-en="Fully licensed Money Services Business guaranteeing safety, compliance, and legal integrity." data-fa="دارای مجوز رسمی MSB و تحت نظارت کامل مرکز FINTRAC کانادا برای امنیت ۱۰۰٪ مبادلات شما.">
+            Fully licensed Money Services Business guaranteeing safety, compliance, and legal integrity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-en="Why Choose Us" data-fa="چرا صرافی اوستا؟">Why Choose Us</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy" data-en="Your Most Reliable Exchange Partner in Richmond Hill" data-fa="همراه مطمئن شما در خدمات ارزی و جابه‌جایی سرمایه">
+            Your Most Reliable Exchange Partner in Richmond Hill
+          </h2>
+          <p class="text-slate-600 text-base leading-relaxed" data-en="We believe currency exchange should be simple, honest, and stress-free. Every quote we give is fair, every fee is clear, and every transfer is executed with top-tier efficiency so you get maximum value for your money." data-fa="ما معتقدیم تبدیل ارز و ارسال حواله باید ساده، صادقانه و بدون استرس باشد. کلیه نرخ‌های ما کاملاً منصفانه و شفاف بوده و تمامی سفارش‌ها با بالاترین دقت انجام می‌شوند تا بیشترین ارزش از سرمایه خود را به دست آورید.">
+            We believe currency exchange should be simple, honest, and stress-free. Every quote we give is fair, every fee is clear, and every transfer is executed with top-tier efficiency so you get maximum value for your money.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <h4 class="font-bold text-brand-navy" data-en="Transparent Pricing" data-fa="قیمت‌گذاری شفاف و عادلانه">Transparent Pricing</h4>
+                <p class="text-xs text-slate-500" data-en="What you see is what you pay. No hidden service charges or unexpected deductions." data-fa="نرخ اعلام شده همان قیمت نهایی است؛ بدون هیچ‌گونه کارمزد پنهان یا کسر غیرمنتظره.">What you see is what you pay. No hidden service charges or unexpected deductions.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <h4 class="font-bold text-brand-navy" data-en="Same-Day Execution" data-fa="انجام و تسویه سریع">Same-Day Execution</h4>
+                <p class="text-xs text-slate-500" data-en="Fast, dependable execution on major currency corridors so your funds arrive on time." data-fa="انجام سریع حواله‌ها در کوتاه‌ترین زمان ممکن تا سرمایه شما به موقع به مقصد برسد.">Fast, dependable execution on major currency corridors so your funds arrive on time.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div>
+                <h4 class="font-bold text-brand-navy" data-en="Direct Personal Support" data-fa="پاسخگویی مستقیم و سریع">Direct Personal Support</h4>
+                <p class="text-xs text-slate-500" data-en="Speak directly to real specialists who answer immediately via Phone or WhatsApp." data-fa="ارتباط مستقیم با کارشناسان مجرب از طریق تلفن و واتساپ بدون معطلی.">Speak directly to real specialists who answer immediately via Phone or WhatsApp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-navy p-8 sm:p-12 rounded-3xl text-white shadow-xl relative overflow-hidden">
+          <div class="relative z-10 space-y-6">
+            <h3 class="text-2xl font-bold text-amber-400" data-en="Need a Guaranteed Rate Quote?" data-fa="نیازمند استعلام سریع نرخ هستید؟">Need a Guaranteed Rate Quote?</h3>
+            <p class="text-gray-300 text-sm leading-relaxed" data-en="Get in touch with us right now. We will provide a guaranteed exchange rate tailored to your transfer volume." data-fa="هم‌اکنون با بخش مبادلات ما تماس بگیرید تا مناسب‌ترین نرخ ارزی را متناسب با حجم حواله به شما ارائه دهیم.">
+              Get in touch with us right now. We will provide a guaranteed exchange rate tailored to your transfer volume.
+            </p>
+
+            <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-phone text-brand-gold"></i>
+                <a href="tel:6479200304" class="font-bold text-base hover:text-brand-gold transition dir-ltr">(647) 920-0304</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                <a href="https://wa.me/16479200304" target="_blank" class="font-bold text-base hover:text-emerald-400 transition dir-ltr">(647) 920-0304</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-brand-gold"></i>
+                <a href="mailto:avestaexchange@gmail.com" class="text-sm hover:text-brand-gold transition">avestaexchange@gmail.com</a>
+              </div>
+            </div>
+
+            <a href="tel:6479200304" class="block text-center w-full bg-brand-gold hover:bg-brand-goldHover text-white font-bold py-3.5 rounded-xl transition shadow">
+              <span data-en="Call Now" data-fa="تماس مستقیم با صرافی">Call Now</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT SECTION (CLEAN & PROFESSIONAL FORM) -->
+  <section id="contact" class="py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-12 border border-slate-200">
+        
+        <div class="lg:col-span-5 p-8 sm:p-12 bg-brand-navy text-white space-y-8">
+          <div>
+            <h2 class="text-3xl font-extrabold" data-en="Contact Information" data-fa="اطلاعات تماس صرافی">Contact Information</h2>
+            <p class="text-gray-300 text-sm mt-2" data-en="Located in Richmond Hill, Ontario. Reach out to our trading desk directly for rate quotes and assistance." data-fa="واقع در ریچموند هیل، اونتاریو. جهت استعلام نرخ و راهنمایی مستقیماً با کارشناسان ما تماس بگیرید.">
+              Located in Richmond Hill, Ontario. Reach out to our trading desk directly for rate quotes and assistance.
+            </p>
+          </div>
+
+          <div class="space-y-6 text-sm">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <p class="font-bold text-white" data-en="Office Location" data-fa="موقعیت دفتر">Office Location</p>
+                <p class="text-gray-300">Richmond Hill, Ontario, Canada</p>
+                <p class="text-gray-400 text-xs mt-0.5">ریچموند هیل، اونتاریو، کانادا</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <p class="font-bold text-white" data-en="Direct Line" data-fa="تلفن دفتر">Direct Line</p>
+                <a href="tel:6479200304" class="text-gray-300 hover:text-white dir-ltr font-semibold inline-block">(647) 920-0304</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-800 text-emerald-400 rounded-xl flex items-center justify-center text-lg shrink-0">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <p class="font-bold text-white" data-en="WhatsApp Desk" data-fa="واتساپ صرافی">WhatsApp Desk</p>
+                <a href="https://wa.me/16479200304" target="_blank" class="text-gray-300 hover:text-white dir-ltr font-semibold inline-block">(647) 920-0304</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <p class="font-bold text-white" data-en="Email Address" data-fa="پست الکترونیک">Email Address</p>
+                <a href="mailto:avestaexchange@gmail.com" class="text-gray-300 hover:text-white">avestaexchange@gmail.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-center">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-brand-navy" data-en="Inquire for Exchange" data-fa="فرم استعلام و ثبت درخواست">Inquire for Exchange</h3>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1" data-en="Submit your inquiry below and a representative will get back to you promptly." data-fa="مشخصات و درخواست خود را وارد کنید تا کارشناسان ما در سریع‌ترین زمان با شما تماس بگیرند.">
+              Submit your inquiry below and a representative will get back to you promptly.
+            </p>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. A representative from Avesta Exchange will contact you shortly.');" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" data-en="Full Name" data-fa="نام و نام خانوادگی">Full Name</label>
+                <input type="text" required placeholder="John Doe" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 outline-none focus:bg-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" data-en="Phone / Email" data-fa="شماره تماس یا ایمیل">Phone / Email</label>
+                <input type="text" required placeholder="(647) 000-0000" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 outline-none focus:bg-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5" data-en="Inquiry Details" data-fa="شرح درخواست">Inquiry Details</label>
+              <textarea rows="4" required placeholder="Please describe the currency or transfer service you require..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 outline-none focus:bg-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition text-sm resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-800 text-white font-bold px-8 py-3.5 rounded-xl shadow transition text-sm flex items-center justify-center gap-2">
+              <i class="fa-solid fa-paper-plane text-brand-gold"></i>
+              <span data-en="Submit Inquiry" data-fa="ارسال درخواست">Submit Inquiry</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-navy text-gray-400 py-8 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center space-y-4 sm:space-y-0">
+      <p>© Avesta Exchange. Richmond Hill, Ontario. | صرافی اوستا - ریچموند هیل</p>
+      <p data-en="FINTRAC Registered Money Services Business" data-fa="ثبت رسمی فینترک کانادا (FINTRAC)">FINTRAC Registered Money Services Business</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC BILINGUAL TOGGLE SCRIPT -->
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'fa' : 'en';
+      const htmlTag = document.getElementById('htmlTag');
+      const langBtnText = document.getElementById('langBtnText');
+
+      if (currentLang === 'fa') {
+        htmlTag.setAttribute('dir', 'rtl');
+        htmlTag.setAttribute('lang', 'fa');
+        langBtnText.innerText = 'English';
+      } else {
+        htmlTag.setAttribute('dir', 'ltr');
+        htmlTag.setAttribute('lang', 'en');
+        langBtnText.innerText = 'فارسی';
+      }
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.getAttribute(`data-${currentLang}`);
+        if (text) el.innerText = text;
+      });
+    }
+  </script>
+</body>
+</html>
