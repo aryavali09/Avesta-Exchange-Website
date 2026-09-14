@@ -1,116 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="htmlTag">
+<html lang="en" dir="ltr" id="htmlTag" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avesta Exchange | صرافی اوستا - Richmond Hill</title>
+  
+  <!-- Tailwind CSS CDN with extended design system -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
             sans: ['Vazirmatn', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            serif: ['Cinzel', 'Georgia', 'serif'],
           },
           colors: {
             brand: {
-              navy: '#0F172A',
-              navyLight: '#1E293B',
-              gold: '#D97706',
-              goldHover: '#B45309',
-              goldLight: '#FEF3C7',
+              navy: '#0B132B',
+              navyDark: '#050A18',
+              navyLight: '#1C2541',
+              gold: '#D4AF37',
+              goldHover: '#B59226',
+              goldLight: '#FFF8E7',
+              goldGlow: '#F3E5AB',
               slate: '#334155'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.3)' },
+              '100%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.7)' },
             }
           }
         }
       }
     }
   </script>
+  
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Premium Glassmorphism & Visual Effects */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .glass-dark {
+      background: rgba(11, 19, 43, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF099 0%, #D4AF37 50%, #997A15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #E6C250 0%, #D4AF37 50%, #B59226 100%);
+    }
+    .gold-border-glow {
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-gold selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-gold selection:text-white font-sans">
 
   <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-brand-navy text-gray-300 text-xs py-2.5 px-4 border-b border-slate-800">
+  <div class="bg-brand-navyDark text-gray-300 text-xs py-2.5 px-4 border-b border-brand-navyLight/50">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
       <div class="flex items-center space-x-3 space-x-reverse">
-        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-brand-gold"></i> <span data-en="FINTRAC Registered MSB" data-fa="ثبت شده در فینترک کانادا (FINTRAC)">FINTRAC Registered MSB</span></span>
+        <span class="inline-flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-shield-halved text-brand-gold"></i> 
+          <span data-en="FINTRAC Registered MSB" data-fa="ثبت رسمی در فینترک کانادا (FINTRAC)">FINTRAC Registered MSB</span>
+        </span>
         <span class="text-slate-600">|</span>
-        <span class="inline-flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-brand-gold"></i> Richmond Hill, ON</span>
+        <span class="inline-flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-location-dot text-brand-gold"></i> Richmond Hill, ON
+        </span>
       </div>
       <div class="flex items-center space-x-5 space-x-reverse">
-        <a href="tel:6479968020" class="hover:text-brand-gold transition flex items-center dir-ltr"><i class="fa-solid fa-phone text-brand-gold mr-1.5"></i> (647) 996-8020</a>
-        <a href="https://wa.me/16479968020" target="_blank" class="hover:text-green-400 transition flex items-center"><i class="fa-brands fa-whatsapp text-green-500 text-sm mr-1"></i> WhatsApp</a>
-        <button onclick="toggleLanguage()" class="bg-slate-800 hover:bg-slate-700 text-brand-gold font-bold px-3 py-1 rounded border border-brand-gold/30 text-xs transition flex items-center gap-1">
-          <i class="fa-solid fa-globe"></i> <span id="langBtnText">فارسی</span>
+        <a href="tel:6479968020" class="hover:text-brand-gold transition-colors flex items-center dir-ltr font-semibold">
+          <i class="fa-solid fa-phone text-brand-gold mr-1.5"></i> (647) 996-8020
+        </a>
+        <a href="https://wa.me/16479968020" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors flex items-center font-medium">
+          <i class="fa-brands fa-whatsapp text-green-500 text-sm mr-1"></i> WhatsApp
+        </a>
+        <button onclick="toggleLanguage()" class="bg-brand-navyLight hover:bg-slate-700 text-brand-gold font-bold px-3 py-1 rounded-md border border-brand-gold/30 text-xs transition flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-globe text-brand-gold"></i> 
+          <span id="langBtnText">فارسی</span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- NAVIGATION -->
-  <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <nav class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
-      <div class="flex items-center space-x-3 space-x-reverse">
-        <div class="w-11 h-11 bg-brand-navy text-brand-gold font-bold flex items-center justify-center text-2xl rounded-xl shadow border border-brand-gold/30">
-          A
+      
+      <!-- LOGO AREA -->
+      <a href="#" class="flex items-center space-x-3.5 space-x-reverse group">
+        <!-- SVG Emblem Logo -->
+        <div class="relative w-12 h-12 flex-shrink-0">
+          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md transition-transform duration-300 group-hover:scale-105" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3E5AB" />
+                <stop offset="50%" stop-color="#D4AF37" />
+                <stop offset="100%" stop-color="#997A15" />
+              </linearGradient>
+              <linearGradient id="navyGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1C2541" />
+                <stop offset="100%" stop-color="#0B132B" />
+              </linearGradient>
+            </defs>
+            <!-- Shield Base -->
+            <path d="M50 5 L88 20 V48 C88 72 50 94 50 94 C50 94 12 72 12 48 V20 Z" fill="url(#navyGradNav)" stroke="url(#goldGradNav)" stroke-width="3"/>
+            <!-- Inner Gold Accent Wings -->
+            <path d="M50 16 L78 28 V46 C78 64 50 82 50 82 C50 82 22 64 22 46 V28 Z" fill="none" stroke="url(#goldGradNav)" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
+            <!-- Stylized 'A' Wings -->
+            <path d="M50 22 L70 68 H58 L50 48 L42 68 H30 Z" fill="url(#goldGradNav)"/>
+            <path d="M44 54 H56 L50 38 Z" fill="url(#navyGradNav)"/>
+            <circle cx="50" cy="30" r="3.5" fill="url(#goldGradNav)"/>
+          </svg>
         </div>
+
         <div class="flex flex-col">
-          <span class="text-2xl font-black text-brand-navy tracking-tight">AVESTA <span class="text-brand-gold">EXCHANGE</span></span>
-          <span class="text-[11px] text-slate-500 font-semibold tracking-wide" data-en="Foreign Exchange & Remittance" data-fa="صرافی و خدمات ارزی اوستا">Foreign Exchange & Remittance</span>
+          <span class="text-2xl font-black text-brand-navy tracking-tight leading-none font-serif flex items-center gap-1">
+            AVESTA <span class="gold-gradient-text font-extrabold">EXCHANGE</span>
+          </span>
+          <span class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase mt-1" data-en="Foreign Exchange & Remittance" data-fa="صرافی و خدمات ارزی اوستا">Foreign Exchange & Remittance</span>
         </div>
-      </div>
+      </a>
 
+      <!-- Desktop Nav Links -->
       <div class="hidden md:flex items-center space-x-8 space-x-reverse font-semibold text-slate-700 text-sm">
-        <a href="#rates-info" class="hover:text-brand-gold transition" data-en="Rate Policy" data-fa="استعلام نرخ روز">Rate Policy</a>
-        <a href="#services" class="hover:text-brand-gold transition" data-en="Services" data-fa="خدمات ما">Services</a>
-        <a href="#about" class="hover:text-brand-gold transition" data-en="Why Choose Us" data-fa="چرا اوستا">Why Choose Us</a>
-        <a href="#contact" class="hover:text-brand-gold transition" data-en="Contact Us" data-fa="تماس با ما">Contact Us</a>
+        <a href="#rates-info" class="hover:text-brand-gold transition-colors" data-en="Rate Policy" data-fa="استعلام نرخ روز">Rate Policy</a>
+        <a href="#services" class="hover:text-brand-gold transition-colors" data-en="Services" data-fa="خدمات ما">Services</a>
+        <a href="#about" class="hover:text-brand-gold transition-colors" data-en="Why Choose Us" data-fa="چرا اوستا">Why Choose Us</a>
+        <a href="#contact" class="hover:text-brand-gold transition-colors" data-en="Contact Us" data-fa="تماس با ما">Contact Us</a>
       </div>
 
-      <a href="tel:6479968020" class="bg-brand-gold hover:bg-brand-goldHover text-white font-bold px-5 py-2.5 rounded-lg shadow transition flex items-center gap-2 text-sm">
+      <!-- Action Button -->
+      <a href="tel:6479968020" class="gold-gradient-bg hover:opacity-95 text-brand-navy font-bold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition flex items-center gap-2 text-sm border border-brand-gold/40">
         <i class="fa-solid fa-phone"></i>
         <span data-en="Call for Live Rate" data-fa="استعلام تلفنی نرخ">Call for Live Rate</span>
       </a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section class="bg-gradient-to-br from-brand-navy via-slate-900 to-brand-navyLight text-white py-16 lg:py-24 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl space-y-6">
-        <span class="inline-block bg-brand-gold/20 text-brand-gold text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-brand-gold/30" data-en="Richmond Hill Foreign Exchange & Remittance" data-fa="مرکز تخصصی خدمات ارزی و حواله‌جات - ریچموند هیل">
-          Richmond Hill Foreign Exchange & Remittance
-        </span>
-        <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight" data-en="Unmatched Rates, Absolute Speed & Complete Reliability" data-fa="بهترین نرخ روز، بالاترین سرعت و اطمینان کامل در حواله‌جات">
-          Unmatched Rates, Absolute Speed & Complete Reliability
-        </h1>
-        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl" data-en="We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance." data-fa="ارائه رقابتی‌ترین نرخ‌های بازار بدون هیچ‌گونه کارمزد پنهان. جابه‌جایی سریع و امن سرمایه با پشتیبانی کامل و رعایت تمامی استانداردهای قانونی.">
-          We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance.
-        </p>
+  <!-- HERO SECTION WITH EMBEDDED BRAND SHIELD LOGO -->
+  <section class="bg-gradient-to-br from-brand-navyDark via-brand-navy to-brand-navyLight text-white py-16 lg:py-24 relative overflow-hidden border-b border-brand-gold/20">
+    <!-- Ambient background glow elements -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="pt-4 flex flex-wrap gap-4">
-          <a href="tel:6479968020" class="bg-brand-gold hover:bg-brand-goldHover text-white font-bold px-7 py-4 rounded-xl shadow-lg flex items-center gap-3 transition text-base">
-            <i class="fa-solid fa-phone text-lg"></i>
-            <span data-en="Call (647) 996-8304" data-fa="تماس مستقیم: (۶۴۷) ۴">Call (647) 996-8020</a>
-          </a>
-          <a href="https://wa.me/16479968020" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-4 rounded-xl shadow-lg flex items-center gap-3 transition text-base">
-            <i class="fa-brands fa-whatsapp text-2xl"></i>
-            <span data-en="Message on WhatsApp" data-fa="ارسال پیام در واتساپ">Message on WhatsApp</span>
-          </a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text Column -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-brand-navyLight/80 text-brand-gold text-xs font-extrabold px-4 py-1.5 rounded-full border border-brand-gold/30 shadow-inner">
+            <i class="fa-solid fa-award text-sm"></i>
+            <span data-en="Richmond Hill's Trusted Exchange House" data-fa="مرکز تخصصی و معتبر خدمات ارزی در ریچموند هیل">Richmond Hill's Trusted Exchange House</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight" data-en="Unmatched Rates, Absolute Speed & Complete Reliability" data-fa="بهترین نرخ روز، بالاترین سرعت و اطمینان کامل در حواله‌جات">
+            Unmatched Rates, Absolute Speed & Complete Reliability
+          </h1>
+
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light" data-en="We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance." data-fa="ارائه رقابتی‌ترین نرخ‌های بازار بدون هیچ‌گونه کارمزد پنهان. جابه‌جایی سریع و امن سرمایه با پشتیبانی کامل و رعایت تمامی استانداردهای قانونی.">
+            We bring you industry-leading competitive rates with zero surprise fees. Experience fast, seamless money transfers and foreign exchange backed by full financial compliance.
+          </p>
+
+          <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="tel:6479968020" class="gold-gradient-bg hover:opacity-95 text-brand-navy font-black px-7 py-4 rounded-xl shadow-xl flex items-center gap-3 transition transform hover:-translate-y-0.5 text-base border border-brand-goldLight/40">
+              <i class="fa-solid fa-phone text-lg"></i>
+              <span data-en="Call (647) 996-8020" data-fa="تماس مستقیم: (۶۴۷) ۹۹۶-۸۰۲۰">Call (647) 996-8020</span>
+            </a>
+            <a href="https://wa.me/16479968020" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-4 rounded-xl shadow-xl flex items-center gap-3 transition transform hover:-translate-y-0.5 text-base border border-emerald-400/30">
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              <span data-en="Message on WhatsApp" data-fa="ارسال پیام در واتساپ">Message on WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Feature Badges -->
+          <div class="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t border-slate-800 text-xs sm:text-sm text-gray-300">
+            <div class="flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-bolt text-brand-gold"></i>
+              <span data-en="Instant Quotes" data-fa="استعلام فوری">Instant Quotes</span>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-lock text-brand-gold"></i>
+              <span data-en="100% Secure" data-fa="۱۰۰٪ امن و قانونی">100% Secure</span>
+            </div>
+            <div class="flex items-center justify-center lg:justify-start gap-2">
+              <i class="fa-solid fa-hand-holding-dollar text-brand-gold"></i>
+              <span data-en="Zero Hidden Fees" data-fa="بدون کارمزد پنهان">Zero Hidden Fees</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Hero Logo Emblem Visual (The Visual Peak Element) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-float">
+            
+            <!-- Glow Rings -->
+            <div class="absolute inset-0 rounded-full border border-brand-gold/30 animate-pulse-slow"></div>
+            <div class="absolute -inset-4 rounded-full border border-brand-gold/10"></div>
+            
+            <!-- Main Glass Backdrop Emblem Card -->
+            <div class="w-full h-full glass-dark rounded-3xl p-8 flex flex-col items-center justify-center text-center gold-border-glow relative z-10 shadow-2xl">
+              
+              <!-- SVG Full Logo Emblem -->
+              <svg viewBox="0 0 200 200" class="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-2xl mb-2" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF099" />
+                    <stop offset="50%" stop-color="#D4AF37" />
+                    <stop offset="100%" stop-color="#997A15" />
+                  </linearGradient>
+                  <linearGradient id="shieldHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1C2541" />
+                    <stop offset="100%" stop-color="#050A18" />
+                  </linearGradient>
+                </defs>
+                
+                <!-- External Shield Frame -->
+                <path d="M100 12 L172 40 V96 C172 144 100 188 100 188 C100 188 28 144 28 96 V40 Z" fill="url(#shieldHeroGrad)" stroke="url(#goldHeroGrad)" stroke-width="4"/>
+                
+                <!-- Inner Decorative Filigree -->
+                <path d="M100 28 L156 50 V92 C156 130 100 166 100 166 C100 166 44 130 44 92 V50 Z" fill="none" stroke="url(#goldHeroGrad)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+                
+                <!-- Wings / Letter A Construct -->
+                <path d="M100 40 L138 132 H116 L100 92 L84 132 H62 Z" fill="url(#goldHeroGrad)"/>
+                <path d="M88 104 H112 L100 72 Z" fill="url(#shieldHeroGrad)"/>
+                
+                <!-- Central Star/Crown Point -->
+                <polygon points="100,48 103,57 112,57 105,62 108,71 100,65 92,71 95,62 88,57 97,57" fill="url(#goldHeroGrad)"/>
+              </svg>
+
+              <span class="text-xl font-black font-serif gold-gradient-text tracking-wider uppercase">AVESTA</span>
+              <span class="text-xs font-bold text-gray-300 tracking-widest uppercase">Exchange • صرافی اوستا</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- RATE NOTICE SECTION -->
-  <section id="rates-info" class="py-12 bg-white border-b border-gray-200">
+  <section id="rates-info" class="py-12 bg-white border-b border-slate-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="bg-gradient-to-r from-amber-50 via-brand-goldLight to-amber-50 border-2 border-brand-gold/40 rounded-3xl p-6 sm:p-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
         
-        <div class="space-y-3 max-w-3xl">
-          <div class="inline-flex items-center gap-2 bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
+        <!-- Decorative subtle background icon -->
+        <i class="fa-solid fa-chart-line absolute -right-6 -bottom-6 text-9xl text-brand-gold/10 pointer-events-none"></i>
+
+        <div class="space-y-3 max-w-3xl relative z-10">
+          <div class="inline-flex items-center gap-2 gold-gradient-bg text-brand-navy text-xs font-black px-3.5 py-1 rounded-full uppercase shadow-sm">
             <i class="fa-solid fa-tags"></i>
             <span data-en="Best Market Rates Guarantee" data-fa="تضمین بهترین نرخ بازار">Best Market Rates Guarantee</span>
           </div>
@@ -122,13 +286,13 @@
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0">
-          <a href="tel:6479968020" class="bg-brand-navy hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow flex items-center justify-center gap-2">
+        <div class="flex flex-col sm:flex-row md:flex-col gap-3 w-full md:w-auto shrink-0 relative z-10">
+          <a href="tel:6479968020" class="bg-brand-navy hover:bg-brand-navyLight text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow-md flex items-center justify-center gap-2 border border-brand-gold/30">
             <i class="fa-solid fa-phone text-brand-gold"></i>
             <span data-en="Call Trading Desk" data-fa="تماس برای نرخ روز">Call Trading Desk</span>
           </a>
-          <a href="https://wa.me/16479968020" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow flex items-center justify-center gap-2">
-            <i class="fa-brands fa-whatsapp"></i>
+          <a href="https://wa.me/16479968020" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-xl text-center text-sm transition shadow-md flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-base"></i>
             <span data-en="WhatsApp Inquiry" data-fa="استعلام سریع در واتس‌اپ">WhatsApp Inquiry</span>
           </a>
         </div>
@@ -138,19 +302,22 @@
   </section>
 
   <!-- SERVICES SECTION -->
-  <section id="services" class="py-20 bg-slate-50">
+  <section id="services" class="py-20 bg-slate-50 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy" data-en="Our Core Services" data-fa="خدمات اصلی صرافی اوستا">Our Core Services</h2>
-        <p class="text-slate-600 mt-3 text-base" data-en="Fast, transparent, and completely dependable currency exchange solutions tailored for you." data-fa="ارائه خدمات ارزی و انتقال پول با بالاترین سرعت، شفافیت کامل و قیمت‌های رقابتی.">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-extrabold text-brand-gold uppercase tracking-widest" data-en="What We Offer" data-fa="خدمات ما">What We Offer</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy" data-en="Our Core Currency Services" data-fa="خدمات اصلی صرافی اوستا">Our Core Currency Services</h2>
+        <div class="w-16 h-1 gold-gradient-bg mx-auto rounded-full"></div>
+        <p class="text-slate-600 text-base" data-en="Fast, transparent, and completely dependable currency exchange solutions tailored for you." data-fa="ارائه خدمات ارزی و انتقال پول با بالاترین سرعت، شفافیت کامل و قیمت‌های رقابتی.">
           Fast, transparent, and completely dependable currency exchange solutions tailored for you.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
         <!-- Service 1 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-amber-100 text-brand-gold rounded-xl flex items-center justify-center text-2xl mb-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-amber-100/70 text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-arrow-trend-up"></i>
           </div>
           <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Competitive FX Rates" data-fa="بهترین نرخ‌های مبادله">Competitive FX Rates</h3>
@@ -160,8 +327,8 @@
         </div>
 
         <!-- Service 2 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-blue-100/70 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-paper-plane"></i>
           </div>
           <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Fast Remittances" data-fa="حواله‌جات ارزی سریع">Fast Remittances</h3>
@@ -171,8 +338,8 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-purple-100/70 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-handshake"></i>
           </div>
           <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="Commercial Transfers" data-fa="حواله‌های تجاری و بزرگ">Commercial Transfers</h3>
@@ -182,8 +349,8 @@
         </div>
 
         <!-- Service 4 -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-6">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-emerald-100/70 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
           <h3 class="text-xl font-bold text-brand-navy mb-3" data-en="FINTRAC Registered" data-fa="امنیت و مجوز رسمی">FINTRAC Registered</h3>
@@ -191,6 +358,7 @@
             Fully licensed Money Services Business guaranteeing safety, compliance, and legal integrity.
           </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -199,8 +367,9 @@
   <section id="about" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-12 items-center">
+        
         <div class="space-y-6">
-          <span class="text-xs font-bold text-brand-gold uppercase tracking-wider" data-en="Why Choose Us" data-fa="چرا صرافی اوستا؟">Why Choose Us</span>
+          <span class="text-xs font-extrabold text-brand-gold uppercase tracking-wider" data-en="Why Choose Us" data-fa="چرا صرافی اوستا؟">Why Choose Us</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy" data-en="Your Most Reliable Exchange Partner in Richmond Hill" data-fa="همراه مطمئن شما در خدمات ارزی و جابه‌جایی سرمایه">
             Your Most Reliable Exchange Partner in Richmond Hill
           </h2>
@@ -210,68 +379,75 @@
 
           <div class="space-y-4 pt-2">
             <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </div>
               <div>
                 <h4 class="font-bold text-brand-navy" data-en="Transparent Pricing" data-fa="قیمت‌گذاری شفاف و عادلانه">Transparent Pricing</h4>
-                <p class="text-xs text-slate-500" data-en="What you see is what you pay. No hidden service charges or unexpected deductions." data-fa="نرخ اعلام شده همان قیمت نهایی است؛ بدون هیچ‌گونه کارمزد پنهان یا کسر غیرمنتظره.">What you see is what you pay. No hidden service charges or unexpected deductions.</p>
+                <p class="text-xs text-slate-500 mt-0.5" data-en="What you see is what you pay. No hidden service charges or unexpected deductions." data-fa="نرخ اعلام شده همان قیمت نهایی است؛ بدون هیچ‌گونه کارمزد پنهان یا کسر غیرمنتظره.">What you see is what you pay. No hidden service charges or unexpected deductions.</p>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </div>
               <div>
                 <h4 class="font-bold text-brand-navy" data-en="Same-Day Execution" data-fa="انجام و تسویه سریع">Same-Day Execution</h4>
-                <p class="text-xs text-slate-500" data-en="Fast, dependable execution on major currency corridors so your funds arrive on time." data-fa="انجام سریع حواله‌ها در کوتاه‌ترین زمان ممکن تا سرمایه شما به موقع به مقصد برسد.">Fast, dependable execution on major currency corridors so your funds arrive on time.</p>
+                <p class="text-xs text-slate-500 mt-0.5" data-en="Fast, dependable execution on major currency corridors so your funds arrive on time." data-fa="انجام سریع حواله‌ها در کوتاه‌ترین زمان ممکن تا سرمایه شما به موقع به مقصد برسد.">Fast, dependable execution on major currency corridors so your funds arrive on time.</p>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+              <div class="w-8 h-8 bg-amber-100 text-brand-gold rounded-lg flex items-center justify-center font-bold text-sm shrink-0 mt-1 shadow-sm">
+                <i class="fa-solid fa-check"></i>
+              </div>
               <div>
                 <h4 class="font-bold text-brand-navy" data-en="Direct Personal Support" data-fa="پاسخگویی مستقیم و سریع">Direct Personal Support</h4>
-                <p class="text-xs text-slate-500" data-en="Speak directly to real specialists who answer immediately via Phone or WhatsApp." data-fa="ارتباط مستقیم با کارشناسان مجرب از طریق تلفن و واتساپ بدون معطلی.">Speak directly to real specialists who answer immediately via Phone or WhatsApp.</p>
+                <p class="text-xs text-slate-500 mt-0.5" data-en="Speak directly to real specialists who answer immediately via Phone or WhatsApp." data-fa="ارتباط مستقیم با کارشناسان مجرب از طریق تلفن و واتساپ بدون معطلی.">Speak directly to real specialists who answer immediately via Phone or WhatsApp.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="bg-brand-navy p-8 sm:p-12 rounded-3xl text-white shadow-xl relative overflow-hidden">
+        <div class="bg-gradient-to-br from-brand-navy to-brand-navyDark p-8 sm:p-12 rounded-3xl text-white shadow-2xl relative overflow-hidden border border-brand-gold/30">
           <div class="relative z-10 space-y-6">
-            <h3 class="text-2xl font-bold text-amber-400" data-en="Need a Guaranteed Rate Quote?" data-fa="نیازمند استعلام سریع نرخ هستید؟">Need a Guaranteed Rate Quote?</h3>
+            <h3 class="text-2xl font-extrabold gold-gradient-text" data-en="Need a Guaranteed Rate Quote?" data-fa="نیازمند استعلام سریع نرخ هستید؟">Need a Guaranteed Rate Quote?</h3>
             <p class="text-gray-300 text-sm leading-relaxed" data-en="Get in touch with us right now. We will provide a guaranteed exchange rate tailored to your transfer volume." data-fa="هم‌اکنون با بخش مبادلات ما تماس بگیرید تا مناسب‌ترین نرخ ارزی را متناسب با حجم حواله به شما ارائه دهیم.">
               Get in touch with us right now. We will provide a guaranteed exchange rate tailored to your transfer volume.
             </p>
 
-            <div class="p-4 bg-slate-800/80 rounded-2xl border border-slate-700 space-y-3">
+            <div class="p-5 bg-brand-navyLight/60 rounded-2xl border border-slate-700/80 space-y-3.5 backdrop-blur-sm">
               <div class="flex items-center gap-3">
-                <i class="fa-solid fa-phone text-brand-gold"></i>
+                <i class="fa-solid fa-phone text-brand-gold text-base w-5 text-center"></i>
                 <a href="tel:6479968020" class="font-bold text-base hover:text-brand-gold transition dir-ltr">(647) 996-8020</a>
               </div>
               <div class="flex items-center gap-3">
-                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
-                <a href="https://wa.me/16479968020" target="_blank" class="font-bold text-base hover:text-emerald-400 transition dir-ltr">(647) 996-8020</a>
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-lg w-5 text-center"></i>
+                <a href="https://wa.me/16479968020" target="_blank" rel="noopener noreferrer" class="font-bold text-base hover:text-emerald-400 transition dir-ltr">(647) 996-8020</a>
               </div>
               <div class="flex items-center gap-3">
-                <i class="fa-solid fa-envelope text-brand-gold"></i>
+                <i class="fa-solid fa-envelope text-brand-gold text-base w-5 text-center"></i>
                 <a href="mailto:avestaexchange@gmail.com" class="text-sm hover:text-brand-gold transition">avestaexchange@gmail.com</a>
               </div>
             </div>
 
-            <a href="tel:6479968020" class="block text-center w-full bg-brand-gold hover:bg-brand-goldHover text-white font-bold py-3.5 rounded-xl transition shadow">
+            <a href="tel:6479968020" class="block text-center w-full gold-gradient-bg hover:opacity-95 text-brand-navy font-black py-4 rounded-xl transition shadow-lg text-sm border border-brand-goldLight/40">
               <span data-en="Call Now" data-fa="تماس مستقیم با صرافی">Call Now</span>
             </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- LOCATION & CONTACT SECTION (CLEAN & PROFESSIONAL FORM) -->
+  <!-- LOCATION & CONTACT SECTION -->
   <section id="contact" class="py-20 bg-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-3xl shadow-xl overflow-hidden grid lg:grid-cols-12 border border-slate-200">
         
-        <div class="lg:col-span-5 p-8 sm:p-12 bg-brand-navy text-white space-y-8">
+        <div class="lg:col-span-5 p-8 sm:p-12 bg-gradient-to-b from-brand-navy to-brand-navyDark text-white space-y-8 relative">
           <div>
             <h2 class="text-3xl font-extrabold" data-en="Contact Information" data-fa="اطلاعات تماس صرافی">Contact Information</h2>
             <p class="text-gray-300 text-sm mt-2" data-en="Located in Richmond Hill, Ontario. Reach out to our trading desk directly for rate quotes and assistance." data-fa="واقع در ریچموند هیل، اونتاریو. جهت استعلام نرخ و راهنمایی مستقیماً با کارشناسان ما تماس بگیرید.">
@@ -281,7 +457,7 @@
 
           <div class="space-y-6 text-sm">
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+              <div class="w-10 h-10 bg-brand-navyLight text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0 border border-brand-gold/20">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
               <div>
@@ -292,7 +468,7 @@
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+              <div class="w-10 h-10 bg-brand-navyLight text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0 border border-brand-gold/20">
                 <i class="fa-solid fa-phone"></i>
               </div>
               <div>
@@ -302,17 +478,17 @@
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-slate-800 text-emerald-400 rounded-xl flex items-center justify-center text-lg shrink-0">
+              <div class="w-10 h-10 bg-brand-navyLight text-emerald-400 rounded-xl flex items-center justify-center text-lg shrink-0 border border-emerald-400/20">
                 <i class="fa-brands fa-whatsapp"></i>
               </div>
               <div>
                 <p class="font-bold text-white" data-en="WhatsApp Desk" data-fa="واتساپ صرافی">WhatsApp Desk</p>
-                <a href="https://wa.me/16479968020" target="_blank" class="text-gray-300 hover:text-white dir-ltr font-semibold inline-block">(647) 996-8020</a>
+                <a href="https://wa.me/16479968020" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white dir-ltr font-semibold inline-block">(647) 996-8020</a>
               </div>
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-slate-800 text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0">
+              <div class="w-10 h-10 bg-brand-navyLight text-brand-gold rounded-xl flex items-center justify-center text-lg shrink-0 border border-brand-gold/20">
                 <i class="fa-solid fa-envelope"></i>
               </div>
               <div>
@@ -349,7 +525,7 @@
               <textarea rows="4" required placeholder="Please describe the currency or transfer service you require..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 outline-none focus:bg-white focus:ring-2 focus:ring-brand-gold focus:border-transparent transition text-sm resize-none"></textarea>
             </div>
 
-            <button type="submit" class="w-full sm:w-auto bg-brand-navy hover:bg-slate-800 text-white font-bold px-8 py-3.5 rounded-xl shadow transition text-sm flex items-center justify-center gap-2">
+            <button type="submit" class="w-full sm:w-auto bg-brand-navy hover:bg-brand-navyLight text-white font-bold px-8 py-3.5 rounded-xl shadow-md transition text-sm flex items-center justify-center gap-2 border border-brand-gold/30">
               <i class="fa-solid fa-paper-plane text-brand-gold"></i>
               <span data-en="Submit Inquiry" data-fa="ارسال درخواست">Submit Inquiry</span>
             </button>
@@ -361,7 +537,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-navy text-gray-400 py-8 border-t border-slate-800 text-xs">
+  <footer class="bg-brand-navyDark text-gray-400 py-8 border-t border-slate-800 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center space-y-4 sm:space-y-0">
       <p>© Avesta Exchange. Richmond Hill, Ontario. | صرافی اوستا - ریچموند هیل</p>
       <p data-en="FINTRAC Registered Money Services Business" data-fa="ثبت رسمی فینترک کانادا (FINTRAC)">FINTRAC Registered Money Services Business</p>
