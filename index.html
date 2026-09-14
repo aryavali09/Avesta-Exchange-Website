@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avesta Exchange | صرافی اوستا - Richmond Hill</title>
   
-  <!-- Tailwind CSS CDN with extended design system -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,16 +30,11 @@
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'float': 'float 6s ease-in-out infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
           },
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-8px)' },
-            },
-            glow: {
-              '0%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.3)' },
-              '100%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.7)' },
             }
           }
         }
@@ -52,7 +47,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <style>
-    /* Premium Glassmorphism & Visual Effects */
     .glass-card {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
@@ -115,28 +109,61 @@
       
       <!-- LOGO AREA -->
       <a href="#" class="flex items-center space-x-3.5 space-x-reverse group">
-        <!-- SVG Emblem Logo -->
+        <!-- EXACT SVG RECREATION OF YOUR EMBLEM LOGO -->
         <div class="relative w-12 h-12 flex-shrink-0">
-          <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md transition-transform duration-300 group-hover:scale-105" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 500 500" class="w-full h-full drop-shadow-md transition-transform duration-300 group-hover:scale-105" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="goldGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#F3E5AB" />
-                <stop offset="50%" stop-color="#D4AF37" />
-                <stop offset="100%" stop-color="#997A15" />
+              <linearGradient id="goldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FCE082" />
+                <stop offset="30%" stop-color="#D4AF37" />
+                <stop offset="70%" stop-color="#AA7C11" />
+                <stop offset="100%" stop-color="#664600" />
               </linearGradient>
-              <linearGradient id="navyGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1C2541" />
-                <stop offset="100%" stop-color="#0B132B" />
+              <linearGradient id="goldInner" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFE699" />
+                <stop offset="50%" stop-color="#D4AF37" />
+                <stop offset="100%" stop-color="#8A630D" />
+              </linearGradient>
+              <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF" />
+                <stop offset="50%" stop-color="#C0C0C0" />
+                <stop offset="100%" stop-color="#707070" />
+              </linearGradient>
+              <linearGradient id="redFlag" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#D81E05" />
+                <stop offset="100%" stop-color="#800000" />
               </linearGradient>
             </defs>
-            <!-- Shield Base -->
-            <path d="M50 5 L88 20 V48 C88 72 50 94 50 94 C50 94 12 72 12 48 V20 Z" fill="url(#navyGradNav)" stroke="url(#goldGradNav)" stroke-width="3"/>
-            <!-- Inner Gold Accent Wings -->
-            <path d="M50 16 L78 28 V46 C78 64 50 82 50 82 C50 82 22 64 22 46 V28 Z" fill="none" stroke="url(#goldGradNav)" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.7"/>
-            <!-- Stylized 'A' Wings -->
-            <path d="M50 22 L70 68 H58 L50 48 L42 68 H30 Z" fill="url(#goldGradNav)"/>
-            <path d="M44 54 H56 L50 38 Z" fill="url(#navyGradNav)"/>
-            <circle cx="50" cy="30" r="3.5" fill="url(#goldGradNav)"/>
+            <circle cx="250" cy="250" r="245" fill="url(#goldOuter)"/>
+            <circle cx="250" cy="250" r="228" fill="#0A0A0A"/>
+            <circle cx="250" cy="250" r="218" fill="none" stroke="url(#goldInner)" stroke-width="3"/>
+            <!-- Flag Background -->
+            <g clip-path="url(#badgeClipNav)">
+              <clipPath id="badgeClipNav"><circle cx="250" cy="250" r="215"/></clipPath>
+              <rect x="35" y="35" width="120" height="300" fill="url(#redFlag)"/>
+              <rect x="155" y="35" width="190" height="300" fill="#EAEAEA"/>
+              <rect x="345" y="35" width="120" height="300" fill="url(#redFlag)"/>
+              <path d="M250 80 L260 115 L290 100 L280 135 L315 145 L285 165 L295 200 L265 185 L260 215 L250 215 L240 215 L235 185 L205 200 L215 165 L185 145 L220 135 L210 100 L240 115 Z" fill="url(#redFlag)"/>
+              <!-- CN Tower -->
+              <path d="M120 280 L125 120 L127 120 L127 90 L125 90 L125 70 L127 70 L127 50 L125 50 L126 35 L128 35 L129 50 L127 50 L127 70 L129 70 L129 90 L127 90 L127 120 L132 120 L137 280 Z" fill="#1A1A1A" opacity="0.6"/>
+              <ellipse cx="126" cy="110" rx="10" ry="4" fill="#1A1A1A" opacity="0.7"/>
+              <!-- Skyline -->
+              <path d="M40 280 H460 V330 H40 Z" fill="#111" opacity="0.4"/>
+            </g>
+            <!-- Monogram A + Arrow -->
+            <path d="M160 300 L250 80 L285 155 L245 155 L220 215 L250 215 L230 265 L190 265 L175 300 Z" fill="url(#goldInner)"/>
+            <path d="M250 80 L340 300 L295 300 L275 250 L310 170 L250 80 Z" fill="url(#goldInner)"/>
+            <path d="M320 140 L370 80 M370 80 H325 M370 80 V125" stroke="url(#goldInner)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M210 215 L310 300 H260 L180 230 Z" fill="url(#silverGrad)"/>
+            <!-- Gold Dollar Sign -->
+            <text x="365" y="270" font-family="'Cinzel', serif" font-weight="900" font-size="110" fill="url(#goldInner)" stroke="#3A2800" stroke-width="3">$</text>
+            <!-- Text Archs -->
+            <path id="textArcNav" d="M 80 345 A 190 190 0 0 0 420 345" fill="none"/>
+            <text fill="url(#goldInner)" font-family="'Cinzel', serif" font-weight="900" font-size="42" letter-spacing="6">
+              <textPath href="#textArcNav" startOffset="50%" text-anchor="middle">AVESTA</textPath>
+            </text>
+            <text x="250" y="420" fill="#E0E0E0" font-family="'Cinzel', serif" font-weight="700" font-size="22" letter-spacing="8" text-anchor="middle">— EXCHANGE —</text>
+            <path d="M250 435 L254 445 L265 440 L260 450 L270 455 L258 460 L260 472 L250 463 L240 472 L242 460 L230 455 L240 450 L235 440 L246 445 Z" fill="url(#goldInner)"/>
           </svg>
         </div>
 
@@ -164,9 +191,8 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION WITH EMBEDDED BRAND SHIELD LOGO -->
+  <!-- HERO SECTION -->
   <section class="bg-gradient-to-br from-brand-navyDark via-brand-navy to-brand-navyLight text-white py-16 lg:py-24 relative overflow-hidden border-b border-brand-gold/20">
-    <!-- Ambient background glow elements -->
     <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -216,47 +242,73 @@
           </div>
         </div>
 
-        <!-- Hero Logo Emblem Visual (The Visual Peak Element) -->
+        <!-- HERO EMBLEM VISUAL (EXACT VECTOR EMBLEM MATCHING YOUR IMAGE) -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-float">
-            
-            <!-- Glow Rings -->
-            <div class="absolute inset-0 rounded-full border border-brand-gold/30 animate-pulse-slow"></div>
-            <div class="absolute -inset-4 rounded-full border border-brand-gold/10"></div>
-            
-            <!-- Main Glass Backdrop Emblem Card -->
-            <div class="w-full h-full glass-dark rounded-3xl p-8 flex flex-col items-center justify-center text-center gold-border-glow relative z-10 shadow-2xl">
+          <div class="relative w-80 h-80 sm:w-96 sm:h-96 animate-float">
+            <div class="w-full h-full glass-dark rounded-full p-4 flex items-center justify-center gold-border-glow relative z-10 shadow-2xl">
               
-              <!-- SVG Full Logo Emblem -->
-              <svg viewBox="0 0 200 200" class="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-2xl mb-2" xmlns="http://www.w3.org/2000/svg">
+              <!-- EXACT VECTOR LOGO BADGE -->
+              <svg viewBox="0 0 500 500" class="w-full h-full drop-shadow-2xl" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="goldHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#FFF099" />
-                    <stop offset="50%" stop-color="#D4AF37" />
-                    <stop offset="100%" stop-color="#997A15" />
+                  <linearGradient id="goldOuterHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FCE082" />
+                    <stop offset="30%" stop-color="#D4AF37" />
+                    <stop offset="70%" stop-color="#AA7C11" />
+                    <stop offset="100%" stop-color="#664600" />
                   </linearGradient>
-                  <linearGradient id="shieldHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#1C2541" />
-                    <stop offset="100%" stop-color="#050A18" />
+                  <linearGradient id="goldInnerHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE699" />
+                    <stop offset="50%" stop-color="#D4AF37" />
+                    <stop offset="100%" stop-color="#8A630D" />
+                  </linearGradient>
+                  <linearGradient id="silverGradHero" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="50%" stop-color="#C0C0C0" />
+                    <stop offset="100%" stop-color="#707070" />
+                  </linearGradient>
+                  <linearGradient id="redFlagHero" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#D81E05" />
+                    <stop offset="100%" stop-color="#800000" />
                   </linearGradient>
                 </defs>
+                <circle cx="250" cy="250" r="245" fill="url(#goldOuterHero)"/>
+                <circle cx="250" cy="250" r="228" fill="#0A0A0A"/>
+                <circle cx="250" cy="250" r="218" fill="none" stroke="url(#goldInnerHero)" stroke-width="3"/>
                 
-                <!-- External Shield Frame -->
-                <path d="M100 12 L172 40 V96 C172 144 100 188 100 188 C100 188 28 144 28 96 V40 Z" fill="url(#shieldHeroGrad)" stroke="url(#goldHeroGrad)" stroke-width="4"/>
+                <!-- Flag & Background Details -->
+                <g clip-path="url(#badgeClipHero)">
+                  <clipPath id="badgeClipHero"><circle cx="250" cy="250" r="215"/></clipPath>
+                  <rect x="35" y="35" width="120" height="300" fill="url(#redFlagHero)"/>
+                  <rect x="155" y="35" width="190" height="300" fill="#EAEAEA"/>
+                  <rect x="345" y="35" width="120" height="300" fill="url(#redFlagHero)"/>
+                  <path d="M250 80 L260 115 L290 100 L280 135 L315 145 L285 165 L295 200 L265 185 L260 215 L250 215 L240 215 L235 185 L205 200 L215 165 L185 145 L220 135 L210 100 L240 115 Z" fill="url(#redFlagHero)"/>
+                  
+                  <!-- CN Tower Silhouette -->
+                  <path d="M120 280 L125 120 L127 120 L127 90 L125 90 L125 70 L127 70 L127 50 L125 50 L126 35 L128 35 L129 50 L127 50 L127 70 L129 70 L129 90 L127 90 L127 120 L132 120 L137 280 Z" fill="#1A1A1A" opacity="0.6"/>
+                  <ellipse cx="126" cy="110" rx="10" ry="4" fill="#1A1A1A" opacity="0.7"/>
+                  
+                  <!-- City Silhouette -->
+                  <path d="M40 280 H460 V330 H40 Z" fill="#111" opacity="0.4"/>
+                </g>
+
+                <!-- Gold Monogram A & Arrow -->
+                <path d="M160 300 L250 80 L285 155 L245 155 L220 215 L250 215 L230 265 L190 265 L175 300 Z" fill="url(#goldInnerHero)"/>
+                <path d="M250 80 L340 300 L295 300 L275 250 L310 170 L250 80 Z" fill="url(#goldInnerHero)"/>
+                <path d="M320 140 L370 80 M370 80 H325 M370 80 V125" stroke="url(#goldInnerHero)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M210 215 L310 300 H260 L180 230 Z" fill="url(#silverGradHero)"/>
                 
-                <!-- Inner Decorative Filigree -->
-                <path d="M100 28 L156 50 V92 C156 130 100 166 100 166 C100 166 44 130 44 92 V50 Z" fill="none" stroke="url(#goldHeroGrad)" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+                <!-- Gold Dollar Sign -->
+                <text x="365" y="270" font-family="'Cinzel', serif" font-weight="900" font-size="110" fill="url(#goldInnerHero)" stroke="#3A2800" stroke-width="3">$</text>
                 
-                <!-- Wings / Letter A Construct -->
-                <path d="M100 40 L138 132 H116 L100 92 L84 132 H62 Z" fill="url(#goldHeroGrad)"/>
-                <path d="M88 104 H112 L100 72 Z" fill="url(#shieldHeroGrad)"/>
-                
-                <!-- Central Star/Crown Point -->
-                <polygon points="100,48 103,57 112,57 105,62 108,71 100,65 92,71 95,62 88,57 97,57" fill="url(#goldHeroGrad)"/>
+                <!-- Arch Text -->
+                <path id="textArcHero" d="M 80 345 A 190 190 0 0 0 420 345" fill="none"/>
+                <text fill="url(#goldInnerHero)" font-family="'Cinzel', serif" font-weight="900" font-size="42" letter-spacing="6">
+                  <textPath href="#textArcHero" startOffset="50%" text-anchor="middle">AVESTA</textPath>
+                </text>
+                <text x="250" y="420" fill="#E0E0E0" font-family="'Cinzel', serif" font-weight="700" font-size="22" letter-spacing="8" text-anchor="middle">— EXCHANGE —</text>
+                <path d="M250 435 L254 445 L265 440 L260 450 L270 455 L258 460 L260 472 L250 463 L240 472 L242 460 L230 455 L240 450 L235 440 L246 445 Z" fill="url(#goldInnerHero)"/>
               </svg>
 
-              <span class="text-xl font-black font-serif gold-gradient-text tracking-wider uppercase">AVESTA</span>
-              <span class="text-xs font-bold text-gray-300 tracking-widest uppercase">Exchange • صرافی اوستا</span>
             </div>
           </div>
         </div>
@@ -270,7 +322,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-r from-amber-50 via-brand-goldLight to-amber-50 border-2 border-brand-gold/40 rounded-3xl p-6 sm:p-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
         
-        <!-- Decorative subtle background icon -->
         <i class="fa-solid fa-chart-line absolute -right-6 -bottom-6 text-9xl text-brand-gold/10 pointer-events-none"></i>
 
         <div class="space-y-3 max-w-3xl relative z-10">
@@ -315,7 +366,6 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Service 1 -->
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
           <div class="w-14 h-14 bg-amber-100/70 text-brand-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-arrow-trend-up"></i>
@@ -326,7 +376,6 @@
           </p>
         </div>
 
-        <!-- Service 2 -->
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
           <div class="w-14 h-14 bg-blue-100/70 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-paper-plane"></i>
@@ -337,7 +386,6 @@
           </p>
         </div>
 
-        <!-- Service 3 -->
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
           <div class="w-14 h-14 bg-purple-100/70 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-handshake"></i>
@@ -348,7 +396,6 @@
           </p>
         </div>
 
-        <!-- Service 4 -->
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-brand-gold/50 transition-all duration-300 group">
           <div class="w-14 h-14 bg-emerald-100/70 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-shield-halved"></i>
@@ -499,7 +546,6 @@
           </div>
         </div>
 
-        <!-- FORM SECTION -->
         <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-center">
           <div class="mb-6">
             <h3 class="text-2xl font-bold text-brand-navy" data-en="Inquire for Exchange" data-fa="فرم استعلام و ثبت درخواست">Inquire for Exchange</h3>
@@ -544,7 +590,7 @@
     </div>
   </footer>
 
-  <!-- DYNAMIC BILINGUAL TOGGLE SCRIPT -->
+  <!-- DYNAMIC LANGUAGE SCRIPT -->
   <script>
     let currentLang = 'en';
 
